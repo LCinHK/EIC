@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/uploads/2019/05/211361620787848041-150x150.jpg">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/uploads/2019/05/211361620787848041-150x150.jpg">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/uploads/2019/05/211361620787848041-150x150.jpg">
@@ -14,11 +14,13 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"backup.eic-scie.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"backup.eic-scie.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
   <meta name="description" content="这里是EIC的备份，主站已经不幸的永远离开我们了。">
@@ -34,7 +36,7 @@
 <link rel="canonical" href="https://backup.eic-scie.com/page/3/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -54,31 +56,41 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
-  	<!-- Google AdSense start -->
-	<script data-ad-client="ca-pub-2894842076773522" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- Google AdSense end -->
-  
+  <script data-ad-client="ca-pub-2894842076773522" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 <link rel="alternate" href="/atom.xml" title="EIC" type="application/atom+xml">
 </head>
 
@@ -86,22 +98,23 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-        <span class="toggle-line toggle-line-first"></span>
-        <span class="toggle-line toggle-line-middle"></span>
-        <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">EIC</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">EIC 经济投资社</p>
   </div>
@@ -143,22 +156,98 @@
 
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="EIC"
+      src="/images/uploads/2019/05/211361620787848041.jpg">
+  <p class="site-author-name" itemprop="name">EIC</p>
+  <div class="site-description" itemprop="description">这里是EIC的备份，主站已经不幸的永远离开我们了。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://forum.alevel.tech/" title="https:&#x2F;&#x2F;forum.alevel.tech" rel="noopener" target="_blank">国交论坛</a>
+        </li>
+    </ul>
+  </div>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
-          
+        
 
-          <div class="content index posts-expand">
-            
+        <div class="content index posts-expand">
+          
       
   
   
@@ -174,6 +263,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="EIC">
     </span>
+
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
@@ -215,9 +306,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-			<script data-ad-client="ca-pub-2894842076773522" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <p>** 舞 会 **</p>
 <p>时间：2019年1月29日（比赛第三日晚）</p>
 <p>地点：深圳中洲万豪酒店宴会厅</p>
@@ -289,6 +377,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="EIC">
     </span>
+
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
@@ -330,9 +420,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-			<script data-ad-client="ca-pub-2894842076773522" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <p>由于原先的价格由我方与另一组织<strong>竞争</strong>有限房位与场地而得，而如今与我方同时预定大宴会厅和酒店的该组织因部分原因提前<strong>撤出合作</strong>。</p>
 <p>因此，在合作并未开始的无偿责任下，我方与酒店多次谈判协商后协调出<strong>更为划算</strong>的价位。</p>
 <p>所以，第四届经济学人论坛决赛由原先价格<strong>2500元/人</strong>正式更改为<strong>2000元/人</strong>。</p>
@@ -376,6 +463,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="EIC">
     </span>
+
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
@@ -417,9 +506,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-			<script data-ad-client="ca-pub-2894842076773522" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <p>经过初赛与复赛的选拔，各位终于披荆斩棘来到了决赛。决赛作为整个经济学人论坛的重头戏，不仅<strong>难度提升</strong>，而且带来<strong>更好选手体验。</strong>我们这次对决赛的地点、设施和布置都精益求精，致力让各位选手体验一场<strong>不一般的决赛。</strong></p>
 <p><strong>决赛最终确定时间：</strong></p>
 <p><strong>2019年1月27日–2019年1月30日（四天三晚）</strong></p>
@@ -540,6 +626,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="EIC">
     </span>
+
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
@@ -581,9 +669,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-			<script data-ad-client="ca-pub-2894842076773522" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <p>恭喜我们<strong>中黄（世界）书院学生政府</strong>的同学们，</p>
 <p>在11月24日举办的第四届经济学人论坛广州区复赛获得圆满成功！</p>
 <p><img data-src="/images/uploads/2019/05/10-1559113728.jpeg" alt="第四届经济学人论坛 | 广州分赛区复赛回顾" title="第四届经济学人论坛 | 广州分赛区复赛回顾"></p>
@@ -659,6 +744,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="EIC">
     </span>
+
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
@@ -700,9 +787,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-			<script data-ad-client="ca-pub-2894842076773522" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <p><img data-src="/images/uploads/2019/05/3-1559119862.png" alt="第四届经济学人论坛 | 深圳赛区复赛回顾" title="第四届经济学人论坛 | 深圳赛区复赛回顾"></p>
 <p>选手入场  </p>
 <p>11月17日早，选手们陆续踏入了深圳国际交流学院的大门，走进了经济学人论坛复赛深圳分赛区的会场，在学术指导和工作人员的指引下，选手们进行了登记，并领取了选手胸牌，前往礼堂等待论坛正式开幕。</p>
@@ -789,6 +873,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="EIC">
     </span>
+
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
@@ -830,9 +916,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-			<script data-ad-client="ca-pub-2894842076773522" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <ol>
 <li>广州复赛分赛区</li>
 </ol>
@@ -888,6 +971,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="EIC">
     </span>
+
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
@@ -929,9 +1014,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-			<script data-ad-client="ca-pub-2894842076773522" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <p>深圳赛区：  </p>
 <p>深圳福田区皇岗公园一街（深圳国际交流学院）  </p>
 <p>杭州分赛区：</p>
@@ -989,6 +1071,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="EIC">
     </span>
+
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
@@ -1030,9 +1114,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-			<script data-ad-client="ca-pub-2894842076773522" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <p>经济学人论坛初赛即将进入尾声，对于接下来的安排各位选手们是不是还有些疑惑呢？ 这篇推送包括了一些参赛选手必须知道的内容，赶紧check this out！（文末有二维码）</p>
 <p>01</p>
 <p>初赛截止时间</p>
@@ -1160,6 +1241,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="EIC">
     </span>
+
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
@@ -1201,9 +1284,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-			<script data-ad-client="ca-pub-2894842076773522" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <p>国家兴衰千古风云，谈笑间成一片烟云。</p>
 <p>经济学的车轮在历史之中已运转太久，以至于走了太多的路，也有许多的跌宕起伏。</p>
 <p>热爱经济学的青年们也无法按耐住心情，他们又重回政坛商场，缔造新时代的传奇……</p>
@@ -1336,6 +1416,8 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="EIC">
     </span>
+
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
@@ -1377,9 +1459,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-			<script data-ad-client="ca-pub-2894842076773522" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <p><img data-src="/images/uploads/2019/09/2-1567508121.jpeg" alt="EIC | That’s what economists do" title="EIC | That’s what economists do"></p>
 <p><strong>Economist Investment Club</strong></p>
 <p><strong>经济投资社</strong></p>
@@ -1491,8 +1570,8 @@
 
 
 
-          </div>
-          
+        </div>
+        
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1516,92 +1595,6 @@
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="EIC"
-      src="/images/uploads/2019/05/211361620787848041.jpg">
-  <p class="site-author-name" itemprop="name">EIC</p>
-  <div class="site-description" itemprop="description">这里是EIC的备份，主站已经不幸的永远离开我们了。</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">31</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-
-
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://forum.alevel.tech/" title="https:&#x2F;&#x2F;forum.alevel.tech" rel="noopener" target="_blank">国交论坛</a>
-        </li>
-    </ul>
-  </div>
-
-      </div>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 侧边展示 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2894842076773522"
-     data-ad-slot="9231202274"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
@@ -1624,6 +1617,26 @@
   </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -1639,22 +1652,15 @@
   
   <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/pisces.js"></script>
-
-
 <script src="/js/next-boot.js"></script>
-
-
 
 
   
